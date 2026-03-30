@@ -1,13 +1,20 @@
 @import "tailwindcss";
+@plugin "@tailwindcss/typography";
 
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --accent: #4338ca;
+  --accent-light: #6366f1;
+  --surface: #f9fafb;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --color-accent: var(--accent);
+  --color-accent-light: var(--accent-light);
+  --color-surface: var(--surface);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
@@ -16,11 +23,133 @@
   :root {
     --background: #0a0a0a;
     --foreground: #ededed;
+    --accent: #818cf8;
+    --accent-light: #a5b4fc;
+    --surface: #111111;
   }
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* 섹션 배경 교차 */
+.section-alt {
+  background: var(--surface);
+  margin-left: -1.5rem;
+  margin-right: -1.5rem;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+/* 화면에서 print 전용 요소 숨김 */
+.print-repeat-header {
+  display: none;
+}
+
+/* Print styles */
+@media print {
+  .no-print {
+    display: none !important;
+  }
+
+  /* Force accordions open */
+  .project-details {
+    display: block !important;
+    max-height: none !important;
+    overflow: visible !important;
+  }
+
+  /* Prevent page breaks inside sections */
+  .print-section {
+    break-inside: avoid;
+    border: none !important;
+  }
+
+  /* 프로젝트 카드 border 제거 */
+  .print-no-border {
+    border: none !important;
+  }
+
+  /* Force page break before this element */
+  .print-break-before {
+    break-before: page;
+  }
+
+  /* Force page break after this element */
+  .print-break-after {
+    break-after: page;
+  }
+
+  /* First page: force everything to stay together, then break */
+  .print-page-one {
+    break-after: page;
+    break-inside: avoid;
+  }
+
+  /* Force light mode */
+  :root {
+    --background: #fff !important;
+    --foreground: #000 !important;
+    --accent: #4338ca !important;
+    --surface: #fff !important;
+  }
+
+  body {
+    background: #fff !important;
+    color: #000 !important;
+  }
+
+  .section-alt {
+    background: transparent !important;
+  }
+
+  /* Clean up for print */
+  * {
+    box-shadow: none !important;
+  }
+
+  /* Remove sticky header space */
+  header {
+    position: static !important;
+  }
+
+  /* A4 optimized margins */
+  @page {
+    margin: 15mm 12mm;
+  }
+
+  /* Print 전용 반복 헤더: 각 카드 상단에 표시 */
+  .print-repeat-header {
+    display: block !important;
+    font-size: 14px;
+    font-weight: 700;
+    color: #000;
+    padding-bottom: 8px;
+    margin-bottom: 8px;
+    border-bottom: 1px solid #e4e4e7;
+  }
+
+  /* Ensure links show URL */
+  a[href^="http"]::after {
+    content: " (" attr(href) ")";
+    font-size: 0.75em;
+    color: #666;
+  }
+
+  /* Override dark mode backgrounds */
+  .dark\:bg-zinc-800,
+  .dark\:bg-zinc-950\/80 {
+    background: transparent !important;
+  }
+
+  .dark\:border-zinc-800 {
+    border-color: #e4e4e7 !important;
+  }
+
+  .dark\:text-zinc-300,
+  .dark\:text-zinc-400 {
+    color: #3f3f46 !important;
+  }
 }
