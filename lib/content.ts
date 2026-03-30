@@ -11,6 +11,7 @@ export interface ProjectData {
   techStack: string[];
   summary: string;
   images?: string[];
+  highlights?: string[];
   links?: { github?: string; demo?: string };
   order: number;
   content: string;
@@ -37,6 +38,7 @@ function readMdDir(dirName: string): ProjectData[] {
       role: data.role ?? "",
       techStack: data.techStack,
       summary: data.summary,
+      highlights: data.highlights ?? [],
       images: data.images ?? [],
       links: data.links ?? {},
       order: data.order ?? 0,

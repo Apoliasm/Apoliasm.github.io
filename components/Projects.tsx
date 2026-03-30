@@ -8,6 +8,7 @@ interface Project {
   role: string;
   techStack: string[];
   summary: string;
+  highlights: string[];
   images: string[];
   links: { github?: string; demo?: string };
   contentHtml: string;
@@ -46,8 +47,8 @@ function ProjectCard({ project }: { project: Project }) {
             {project.period}
           </p>
 
-          {/* 요약 */}
-          <p className="mt-1.5 text-sm text-zinc-700 dark:text-zinc-300">
+          {/* 요약 (화면 전용) */}
+          <p className="no-print mt-1.5 text-sm text-zinc-700 dark:text-zinc-300">
             {project.summary}
           </p>
 
@@ -115,19 +116,38 @@ function ProjectCard({ project }: { project: Project }) {
           open ? "max-h-[5000px]" : "max-h-0"
         }`}
       >
-        <div className="border-t border-zinc-100 px-5 pb-5 pt-4 dark:border-zinc-800">
+        <div className=" border-zinc-100 px-5 pb-5 pt-4 dark:border-zinc-800">
+          {/* 인용 스타일 소개 */}
+          <blockquote className="mb-5 border-l-4 border-zinc-300 pl-4 dark:border-zinc-600">
+            <p className="text-base text-zinc-700 dark:text-zinc-300">
+              {project.summary}
+            </p>
+            {project.highlights.length > 0 && (
+              <div className="mt-2 space-y-0.5">
+                {project.highlights.map((h, i) => (
+                  <p
+                    key={i}
+                    className="text-base font-semibold text-zinc-800 dark:text-zinc-200"
+                  >
+                    {h}
+                  </p>
+                ))}
+              </div>
+            )}
+          </blockquote>
+
           {/* 이미지 갤러리 */}
           {project.images.length > 0 && (
             <div className="mb-5 grid gap-3 sm:grid-cols-2">
               {project.images.map((src, i) => (
                 <div
                   key={i}
-                  className="overflow-hidden rounded-md border border-zinc-200 bg-zinc-50 dark:border-zinc-700 dark:bg-zinc-900"
+                  className="flex h-48 items-center justify-center overflow-hidden rounded-md border border-zinc-200 bg-zinc-50 dark:border-zinc-700 dark:bg-zinc-900"
                 >
                   <img
                     src={src}
                     alt={`${project.title} 스크린샷 ${i + 1}`}
-                    className="w-full object-contain"
+                    className="max-h-full max-w-full object-contain"
                   />
                 </div>
               ))}
@@ -156,9 +176,9 @@ export default function Projects({ id, heading, projects }: ProjectsProps) {
         {projects.map((project) => (
           <div key={project.title}>
             {/* PDF 인쇄 시 각 카드 위에 섹션 헤더 반복 */}
-            <h2 className="print-repeat-header text-accent print-break-before ">
+            <h1 className="print-repeat-header print-break-before ">
               {heading}
-            </h2>
+            </h1>
             <ProjectCard project={project} />
           </div>
         ))}

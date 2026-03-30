@@ -9,13 +9,11 @@ images: ["/projects/pu01.png", "/projects/pu02.png"]
 links:
   github: ""
   demo: ""
+highlights:
+  - "슬라이드 프리뷰→결제→열람 플로우 프론트엔드 개발"
+  - "LLM Cost Tracker 백오피스 풀스택 개발"
 order: 1
 ---
-
-> 스타트업의 미국 투자 유치를 위한 Pitch Deck 생성 서비스
-
-**[슬라이드 프리뷰→결제 연동→전체 슬라이드 열람] 플로우 프론트엔드 개발**<br>
-**백오피스 서비스 풀스택 개발**
 
 **핵심 성과**
 

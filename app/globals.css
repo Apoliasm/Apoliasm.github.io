@@ -125,7 +125,9 @@ body {
     display: block !important;
     font-size: 14px;
     font-weight: 700;
-    color: #000;
+    color: var(--accent) !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
     padding-bottom: 8px;
     margin-bottom: 8px;
     border-bottom: 1px solid #e4e4e7;

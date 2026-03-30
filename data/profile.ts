@@ -34,7 +34,7 @@ export const career = [
     company: "pitchUS",
     role: "풀스택 개발",
     description:
-      "창업 프로젝트, MVP 버전 웹 프론트엔드 개발 및 백오피스 기능 풀스태 개발",
+      "창업 프로젝트, MVP 버전 웹 프론트엔드 개발 및 백오피스 기능 풀스택 개발",
   },
 ];
 

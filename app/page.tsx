@@ -15,6 +15,7 @@ function toProjectProps(items: ReturnType<typeof getProjects>) {
     role: p.role ?? "",
     techStack: p.techStack,
     summary: p.summary,
+    highlights: p.highlights ?? [],
     images: p.images ?? [],
     links: p.links ?? {},
     contentHtml: markdownToHtml(p.content),
@@ -36,7 +37,6 @@ export default function Home() {
           <About contentHtml={markdownToHtml(about.content)} />
           <Career />
           <Skills />
-          <Contact />
         </div>
 
         {/* ── 2페이지~: 프로젝트 ── */}
