@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 
 interface Project {
   title: string;
@@ -20,9 +20,17 @@ interface ProjectsProps {
   projects: Project[];
 }
 
-function ProjectCard({ project }: { project: Project }) {
+function ProjectCard({ project, wrapperRef }: { project: Project; wrapperRef: React.RefObject<HTMLDivElement | null> }) {
   const [open, setOpen] = useState(false);
   const hasLinks = project.links.github || project.links.demo;
+
+  useEffect(() => {
+    const el = wrapperRef.current;
+    if (!el) return;
+    const handler = () => setOpen(true);
+    el.addEventListener("nav-open", handler);
+    return () => el.removeEventListener("nav-open", handler);
+  }, [wrapperRef]);
 
   return (
     <div className="print-no-border rounded-lg border border-zinc-200 transition-shadow hover:shadow-md dark:border-zinc-800">
@@ -165,6 +173,23 @@ function ProjectCard({ project }: { project: Project }) {
   );
 }
 
+function ProjectWrapper({ id, heading, project }: { id: string; heading: string; project: Project }) {
+  const ref = useRef<HTMLDivElement>(null);
+  return (
+    <div
+      ref={ref}
+      id={id}
+      data-nav-parent={id.replace(/-\d+$/, "")}
+      data-nav-label={project.title}
+    >
+      <h1 className="print-repeat-header print-break-before ">
+        {heading}
+      </h1>
+      <ProjectCard project={project} wrapperRef={ref} />
+    </div>
+  );
+}
+
 export default function Projects({ id, heading, projects }: ProjectsProps) {
   return (
     <section id={id} className="py-12">
@@ -173,14 +198,13 @@ export default function Projects({ id, heading, projects }: ProjectsProps) {
         {heading}
       </h2>
       <div className="mt-6 space-y-4">
-        {projects.map((project) => (
-          <div key={project.title}>
-            {/* PDF 인쇄 시 각 카드 위에 섹션 헤더 반복 */}
-            <h1 className="print-repeat-header print-break-before ">
-              {heading}
-            </h1>
-            <ProjectCard project={project} />
-          </div>
+        {projects.map((project, i) => (
+          <ProjectWrapper
+            key={project.title}
+            id={`${id}-${i}`}
+            heading={heading}
+            project={project}
+          />
         ))}
       </div>
     </section>

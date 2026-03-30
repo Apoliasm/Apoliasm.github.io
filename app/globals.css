@@ -154,4 +154,9 @@ body {
   .dark\:text-zinc-400 {
     color: #3f3f46 !important;
   }
+
+  /* ── Resume 2페이지 브레이크 ── */
+  .resume-page-two {
+    break-before: page;
+  }
 }
