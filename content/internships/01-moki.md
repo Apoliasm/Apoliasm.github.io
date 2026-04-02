@@ -4,7 +4,7 @@ period: "2024.07 ~ 2024.08"
 role: "프론트엔드 단독 개발"
 techStack: ["React", "JavaScript", "Redux", "Framer-motion", "i18n", "Netlify"]
 summary: "키오스크 매출 분석 및 백오피스 웹 서비스 MVP 개발 및 배포"
-images: ["/projects/moki-01.png", "/projects/moki-02.png"]
+images: ["/projects/moki-02.png"]
 links:
   github: ""
   demo: ""

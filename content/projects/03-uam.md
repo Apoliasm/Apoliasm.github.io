@@ -4,7 +4,7 @@ period: "2024.03 ~ 2024.06"
 role: "알고리즘 설계 · 팀장"
 techStack: ["Python", "PuLP", "MILP"]
 summary: "SKT 산학협력 프로젝트, UAM 버티포트 내 리소스(이착륙 패드·게이트·지상 이동 경로) 최적화 서비스 개발"
-images: ["/projects/uam01.png", "/projects/uam02.png"]
+images: ["/projects/uam01.png"]
 links:
   github: ""
   demo: ""

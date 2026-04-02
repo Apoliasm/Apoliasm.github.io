@@ -30,7 +30,7 @@ export default function Contact() {
             </a>
           </p>
         )}
-        {profile.linkedin && (
+        {/* {profile.linkedin && (
           <p>
             <span className="font-medium text-zinc-900 dark:text-zinc-200">
               LinkedIn{" "}
@@ -44,7 +44,7 @@ export default function Contact() {
               {profile.linkedin.replace("https://www.linkedin.com/in/", "")}
             </a>
           </p>
-        )}
+        )} */}
       </div>
     </section>
   );

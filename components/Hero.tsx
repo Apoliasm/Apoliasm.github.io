@@ -6,7 +6,7 @@ export default function Hero() {
   return (
     <section className="print-section flex items-center gap-6 py-6">
       <div className="shrink-0">
-        <div className="relative h-28 w-28 overflow-hidden rounded-full ring-2 ring-accent/30 ring-offset-2 ring-offset-background sm:h-32 sm:w-32">
+        <div className="relative h-28 w-28 overflow-hidden rounded-full sm:h-32 sm:w-32">
           <Image
             src="/profile.jpg"
             alt={profile.nameKo}

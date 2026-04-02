@@ -4,7 +4,7 @@ period: "2023.09 ~ 2023.12"
 role: "백엔드 개발 · 팀장"
 techStack: ["Python", "Django", "SQLite", "REST API", "WebOS IDE"]
 summary: "LG전자 산학협력 프로젝트, WebOS를 활용한 소상공인을 위한 개인화 키오스크 웹앱 개발"
-images: ["/projects/webos01.png", "/projects/webos02.png"]
+images: ["/projects/webos02.png"]
 links:
   github: ""
   demo: ""
