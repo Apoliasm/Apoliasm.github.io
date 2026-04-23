@@ -2,7 +2,7 @@ export const profile = {
   nameKo: "신영재",
   nameEn: "Yeongjae Shin",
   title: "Full-Stack Developer",
-  bio: "LLM 기반 서비스 설계부터 프론트엔드·백엔드 구현까지, AI 시대의 풀스택을 지향합니다.",
+  bio: "AI 시대의 풀스택 개발자, 문제를 인지하고 해결하는 개발자이자 방향을 조율하는 리더를 지향합니다",
   email: "syjsir@gmail.com",
   github: "https://github.com/Apoliasm",
   linkedin: "https://www.linkedin.com/in/yeongjae-shin-230422284",
