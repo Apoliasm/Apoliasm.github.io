@@ -120,6 +120,11 @@ export function getBadge(name: string): SkillBadge {
   return { name, logo: name, color: "555555" };
 }
 
+export const certifications = [
+  { name: "정보처리기사", date: "2025.06" },
+  { name: "OPIc IH", date: "2025.10" },
+];
+
 export const skills = [
   {
     category: "Frontend",

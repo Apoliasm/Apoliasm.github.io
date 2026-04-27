@@ -148,16 +148,12 @@ function ProjectCard({ project, wrapperRef }: { project: Project; wrapperRef: Re
           {project.images.length > 0 && (
             <div className="mb-5 grid gap-3 sm:grid-cols-2">
               {project.images.map((src, i) => (
-                <div
+                <img
                   key={i}
-                  className="flex h-48 items-center justify-center overflow-hidden rounded-md border border-zinc-200 bg-zinc-50 dark:border-zinc-700 dark:bg-zinc-900"
-                >
-                  <img
-                    src={src}
-                    alt={`${project.title} 스크린샷 ${i + 1}`}
-                    className="max-h-full max-w-full object-contain"
-                  />
-                </div>
+                  src={src}
+                  alt={`${project.title} 스크린샷 ${i + 1}`}
+                  className="rounded-md object-contain"
+                />
               ))}
             </div>
           )}

@@ -3,6 +3,7 @@ import Hero from "@/components/Hero";
 import About from "@/components/About";
 import Career from "@/components/Career";
 import Skills from "@/components/Skills";
+import Certifications from "@/components/Certifications";
 import Projects from "@/components/Projects";
 import FloatingNav from "@/components/FloatingNav";
 import { markdownToHtml } from "@/lib/markdown";
@@ -39,6 +40,7 @@ export default function Home() {
           <About contentHtml={markdownToHtml(about.content)} />
           <Career />
           <Skills />
+          <Certifications />
         </div>
 
         {/* ── 2페이지~: 프로젝트 ── */}
