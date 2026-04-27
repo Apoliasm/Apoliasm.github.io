@@ -3,6 +3,7 @@ import Hero from "@/components/Hero";
 import About from "@/components/About";
 import Career from "@/components/Career";
 import Skills from "@/components/Skills";
+import Certifications from "@/components/Certifications";
 import ResumeProjects from "@/components/ResumeProjects";
 import { markdownToHtml } from "@/lib/markdown";
 import { getAbout, getProjects, getInternships } from "@/lib/content";
@@ -21,8 +22,8 @@ function toResumeProps(items: ReturnType<typeof getProjects>) {
 
 export default function ResumePage() {
   const about = getAbout();
-  const projects = toResumeProps(getProjects());
-  const internships = toResumeProps(getInternships());
+  const projects = toResumeProps(getProjects().filter((p) => p.resume));
+  const internships = toResumeProps(getInternships().filter((p) => p.resume));
 
   return (
     <>
@@ -34,6 +35,7 @@ export default function ResumePage() {
           <About contentHtml={markdownToHtml(about.content)} />
           <Career />
           <Skills />
+          <Certifications />
         </div>
 
         {/* ── 2페이지: 프로젝트 & 인턴십 핵심 성과 ── */}

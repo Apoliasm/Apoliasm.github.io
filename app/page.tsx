@@ -26,8 +26,8 @@ function toProjectProps(items: ReturnType<typeof getProjects>) {
 
 export default function Home() {
   const about = getAbout();
-  const projects = toProjectProps(getProjects());
-  const internships = toProjectProps(getInternships());
+  const projects = toProjectProps(getProjects().filter((p) => p.portfolio));
+  const internships = toProjectProps(getInternships().filter((p) => p.portfolio));
 
   return (
     <>

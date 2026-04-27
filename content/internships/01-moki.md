@@ -11,6 +11,8 @@ links:
 highlights:
   - "프론트엔드 단독 개발로 MVP 완성 및 Netlify 배포"
   - "전역 상태 캐싱으로 중복 API 호출 제거"
+portfolio: true
+resume: true
 order: 1
 ---
 

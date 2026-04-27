@@ -11,6 +11,8 @@ links:
 highlights:
   - "numpy 벡터 연산 최적화로 얼굴 인식 성능 개선"
   - "애자일 도입 및 기능 명세 문서화로 팀 방향 정렬"
+portfolio: true
+resume: true
 order: 2
 ---
 

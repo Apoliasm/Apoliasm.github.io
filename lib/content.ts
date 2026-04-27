@@ -13,6 +13,8 @@ export interface ProjectData {
   images?: string[];
   highlights?: string[];
   links?: { github?: string; demo?: string };
+  portfolio: boolean;
+  resume: boolean;
   order: number;
   content: string;
 }
@@ -41,6 +43,8 @@ function readMdDir(dirName: string): ProjectData[] {
       highlights: data.highlights ?? [],
       images: data.images ?? [],
       links: data.links ?? {},
+      portfolio: data.portfolio ?? true,
+      resume: data.resume ?? true,
       order: data.order ?? 0,
       content: content.trim(),
     } as ProjectData;

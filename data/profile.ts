@@ -2,7 +2,7 @@ export const profile = {
   nameKo: "신영재",
   nameEn: "Yeongjae Shin",
   title: "Full-Stack Developer",
-  bio: "AI 시대의 풀스택 개발자, 문제를 인지하고 해결하는 개발자이자 방향을 조율하는 리더를 지향합니다",
+  bio: "서비스 가치를 기준으로 판단하고, AI와 함께 빠르게 완성하는 풀스택 개발자",
   email: "syjsir@gmail.com",
   github: "https://github.com/Apoliasm",
   linkedin: "https://www.linkedin.com/in/yeongjae-shin-230422284",
@@ -20,21 +20,21 @@ export const career = [
     company: "LG Soft India(인도 뱅갈루루)",
     role: "ML Engineer, Data Analytics",
     description:
-      "LG전자 연구소 현장실습, ML 에어컨 자동제어 시스템 데이터 분석 및 ML 모델 성능 테스팅",
+      "LG전자 연구소 현장실습, 70만건 에어컨 사용 데이터 분석 및 ML 모델 성능 검증, 글로벌 R&D 환경 협업",
   },
   {
-    period: "2024.07~2024.08",
+    period: "2024.07 - 2024.08",
     company: "주식회사 모키",
-    role: "프론트엔드 개발",
+    role: "프론트엔드 단독 개발",
     description:
-      "스타트업 현장실습, 키오스크 매출분석 보고서 웹 프론트엔드 개발 및 초기 버전 배포",
+      "스타트업 현장실습, 키오스크 매출 분석 웹 서비스 프론트엔드 단독 개발 및 MVP 배포",
   },
   {
-    period: "2026.01~현재",
+    period: "2026.01 - 현재",
     company: "pitchUS",
     role: "풀스택 개발",
     description:
-      "창업 프로젝트, MVP 버전 웹 프론트엔드 개발 및 백오피스 기능 풀스택 개발",
+      "창업 프로젝트, 서비스 전체를 설계하고 운영 기능까지 풀스택으로 개발",
   },
 ];
 
@@ -110,7 +110,7 @@ const badgeMap: Record<
   Postman: { logo: "Postman", color: "FF6C37" },
 };
 
-// 이름만 적으면 배지 정보가 자동 매��됩니다.
+// 이름만 적으면 배지 정보가 자동 매핑됩니다.
 // badgeMap에 없는 기술은 회색 기본 배지로 표시됩니다.
 export function getBadge(name: string): SkillBadge {
   const entry = badgeMap[name];

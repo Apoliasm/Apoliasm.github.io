@@ -11,6 +11,8 @@ links:
 highlights:
   - "MILP 기반 리소스 최적화 알고리즘 설계 및 논문 수상"
   - "낯선 도메인 요구사항을 추상화해 최적해 도출"
+portfolio: true
+resume: true
 order: 3
 ---
 

@@ -12,6 +12,8 @@ links:
 highlights:
   - "슬라이드 프리뷰→결제→열람 플로우 프론트엔드 개발"
   - "LLM Cost Tracker 백오피스 풀스택 개발"
+portfolio: true
+resume: true
 order: 1
 ---
 
