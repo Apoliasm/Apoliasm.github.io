@@ -11,7 +11,7 @@ links:
 highlights:
   - "70만건 규모 사용자 데이터 EDA 및 클렌징 파이프라인 구축"
   - "글로벌 R&D 환경 협업 경험"
-portfolio: false
+portfolio: true
 resume: true
 order: 2
 ---
